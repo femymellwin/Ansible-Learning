@@ -1,0 +1,20 @@
+Ansible Server
+  Managed Host 1
+  Managed Host 2 
+  
+  How we will qualify Ansible Server:
+    1- Ansible Server to be installed
+    2- A common user to be created to communicate with Managed Hosts. For example jenkins
+  
+  Pre-requisite:
+  SSH Passwordless connection from Ansible Server to Managed Host
+  
+  Minimum infra requirement:
+  Ansible Server & atleast one managed host
+  
+  > IP address or qualified hostname needed to talk to Managed host
+  
+  How we will implenent SSH passwordless connect?
+  > Using ssh-keygen
+  
+  
