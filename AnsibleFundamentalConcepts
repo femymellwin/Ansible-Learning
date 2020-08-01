@@ -1,7 +1,16 @@
-Ansible Server
-  Managed Host 1
-  Managed Host 2 
+Ansible Server - 129.146.81.43
+  Managed Host 1 - 158.101.20.68
+  Managed Host 2 - 158.101.31.163
+  Managed Host 3 - 129.146.81.168
+ 
+ Components of Ansible Server:
+  > config file [/etc/ansible/ansible.cfg]
+  > seeded inventory file
+  > dynamic inventory file
   
+  Seeded / Dynamic inventory file:
+    > hostgroup
+ 
   How we will qualify Ansible Server:
     1- Ansible Server to be installed
     2- A common user to be created to communicate with Managed Hosts. For example jenkins
@@ -19,6 +28,8 @@ Ansible Server
   
  Adhoc Commands:
  The Ad-Hoc command is the "one-liner" ansible command that performs one task on the target host
+ 
+ ping
  
  Ansible Playbook:
  Combining more than one task/Plays
