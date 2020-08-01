@@ -20,7 +20,9 @@ Ansible Server - 129.146.81.43
     2- A common user to be created to communicate with Managed Hosts. For example jenkins
   
   Pre-requisite:
-  SSH Passwordless connection from Ansible Server to Managed Host
+  SSH Passwordless connection from Ansible Server to Managed Host for a particuar 
+  user who is going to establish the connection between ansible server and the managed host to perform the tasks.
+  e.g -> jenkins
   
   Minimum infra requirement:
   Ansible Server & atleast one managed host
