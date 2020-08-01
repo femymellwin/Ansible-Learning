@@ -8,7 +8,9 @@ Ansible Server - 129.146.81.43
         > config file [/etc/ansible/ansible.cfg]
         > Seeded inventory file [/etc/ansible/hosts] - This is also called as Host inventory file
         > Custom inventory file [This file can be kept in any location, provided aisble should have access to read the file]  - This is also called as Host inventory file
-  
+        > Playbooks
+        > roles
+        
   Seeded / Custom inventory file:
     > hostgroup
     > "all" - This implies all the servers in the inventory file
@@ -47,16 +49,20 @@ Ansible Server - 129.146.81.43
      
      ansible 129.146.81.168 -i inv.txt -m ping
 
-      
       Output 2:
             <ip address>  | UNREACHABLE! => {
           "changed": false,
           "msg": "Failed to connect to the host via ssh: ssh: connect to host 158.101.31.163 port 22: Connection timed out",
           "unreachable": true
       }
+      
+      ansible apex -i inv.txt -m ping [adhoc commands with hostgroup]
+      ansible apex -m copy -a "src=testfile.txt dest=/var/lib/jenkins" -i inv.txt
 
  Ansible Playbook:
  Combining more than one task/Plays
  
+ References:
+ https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
 
   
