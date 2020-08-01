@@ -1,15 +1,17 @@
 Ansible Server - 129.146.81.43
-  Managed Host 1 - 158.101.20.68
-  Managed Host 2 - 158.101.31.163
-  Managed Host 3 - 129.146.81.168
+  Managed Host 1 - 158.101.20.68 EXA-OES-04
+  Managed Host 2 - 158.101.31.163 EXA-OES-03 
+  Managed Host 3 - 129.146.81.168 APEX
+  managed Host 4 - 129.146.170.97 EXA-OES-04
  
  Components of Ansible Server:
-  > config file [/etc/ansible/ansible.cfg]
-  > seeded inventory file
-  > dynamic inventory file
+        > config file [/etc/ansible/ansible.cfg]
+        > seeded inventory file [/etc/ansible/hosts] - This is also called as Host inventory file
+        > dynamic inventory file [This file can be kept in any location]  - This is also called as Host inventory file
   
   Seeded / Dynamic inventory file:
     > hostgroup
+    > "all" - This implies all the servers in the inventory file
  
   How we will qualify Ansible Server:
     1- Ansible Server to be installed
@@ -29,8 +31,27 @@ Ansible Server - 129.146.81.43
  Adhoc Commands:
  The Ad-Hoc command is the "one-liner" ansible command that performs one task on the target host
  
- ping
+ ping:
+ ansible <ipaddress> -m ping
  
+     Output 1:
+       <ip address>  | SUCCESS => {
+          "ansible_facts": {
+              "discovered_interpreter_python": "/usr/bin/python"
+          },
+          "changed": false,
+          "ping": "pong"
+      }
+      
+      Output 2:
+            <ip address>  | UNREACHABLE! => {
+          "changed": false,
+          "msg": "Failed to connect to the host via ssh: ssh: connect to host 158.101.31.163 port 22: Connection timed out",
+          "unreachable": true
+      }
+
+
+
  Ansible Playbook:
  Combining more than one task/Plays
  
