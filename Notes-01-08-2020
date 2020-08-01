@@ -17,4 +17,11 @@ Ansible Server
   How we will implenent SSH passwordless connect?
   > Using ssh-keygen
   
+ Adhoc Commands:
+ The Ad-Hoc command is the "one-liner" ansible command that performs one task on the target host
+ 
+ Ansible Playbook:
+ Combining more than one task/Plays
+ 
+
   
