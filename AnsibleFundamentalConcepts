@@ -6,10 +6,10 @@ Ansible Server - 129.146.81.43
  
  Components of Ansible Server:
         > config file [/etc/ansible/ansible.cfg]
-        > seeded inventory file [/etc/ansible/hosts] - This is also called as Host inventory file
-        > dynamic inventory file [This file can be kept in any location]  - This is also called as Host inventory file
+        > Seeded inventory file [/etc/ansible/hosts] - This is also called as Host inventory file
+        > Custom inventory file [This file can be kept in any location, provided aisble should have access to read the file]  - This is also called as Host inventory file
   
-  Seeded / Dynamic inventory file:
+  Seeded / Custom inventory file:
     > hostgroup
     > "all" - This implies all the servers in the inventory file
  
@@ -43,14 +43,17 @@ Ansible Server - 129.146.81.43
           "ping": "pong"
       }
       
+     Example for adhoc command with custom inventory file:
+     
+     ansible 129.146.81.168 -i inv.txt -m ping
+
+      
       Output 2:
             <ip address>  | UNREACHABLE! => {
           "changed": false,
           "msg": "Failed to connect to the host via ssh: ssh: connect to host 158.101.31.163 port 22: Connection timed out",
           "unreachable": true
       }
-
-
 
  Ansible Playbook:
  Combining more than one task/Plays
